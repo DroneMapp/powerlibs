@@ -6,7 +6,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-version = '0.0.1'
+version = '0.0.2'
 requires = []
 
 with open('README.md') as f:
