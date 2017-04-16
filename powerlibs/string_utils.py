@@ -7,11 +7,4 @@ def snake_case(name):
 
 
 def camel_case(name):
-    """
-    Convert a name from underscore lower case convention to camel case convention.
-    Args:
-        name (str): name in underscore lowercase convention.
-    Returns:
-        Name in camel case convention.
-    """
     return "".join((p.title() if i else p) for i, p in enumerate(name.split("_")))

@@ -1,13 +1,12 @@
-import os
-import sys
-
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
 version = '0.0.2'
-requires = []
+
+with open('requirements/production.txt') as requirements_file:
+    requires = [line for line in requirements_file]
 
 with open('README.md') as f:
     readme = f.read()
@@ -37,7 +36,6 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Scientific/Engineering :: GIS',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ),
 )
