@@ -8,7 +8,10 @@ dependencies:
 
 test:
     pre:
-      - flake8 -v --ignore=E501 powerlibs/
+        - flake8 -v --ignore=E501 powerlibs/
 
     override:
-        - py.test
+        - PYTHONPATH=. py.test
+        - cp .coverage $CIRCLE_ARTIFACTS/
+        - mv htmlcov/ $CIRCLE_ARTIFACTS/
+        - coverage-badge -o $CIRCLE_ARTIFACTS/coverage.svg
